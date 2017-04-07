@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=9;IE=10;IE=11;IE=Edge,chrome=1" />
+    <title ng-bind="curPageTitle"></title>
+
+ 
+<script src="angular/angular.min.js" > </script>
+
+<script >
+    var myapp = angular.module("myapp",[]).controller("MyController",MyController);
+    function MyController($scope) {
+    $scope.anchorClicks = 0;
+    $scope.buttonClicks = 0;
+    $scope.handleAnchorClick = function() {
+        $scope.anchorClicks++;
+    };
+    $scope.handleButtonClick = function() {
+        $scope.buttonClicks++;
+    };
+    
+}
+</script>
+
+
+</head>
+
+<body ng-app="myapp">
+    <!--<div class="full-page-overlay" route-loader>
+    <i class="icon-loader spin">Loading…</i>
+  </div>
+  <div ng-view></div>-->
+<div class="well" ng-controller="MyController">
+    <h4>Click me to toggle: <input type="checkbox" ng-model="checked"></h4>
+    <a class="btn btn-primary" ng-disabled="checked" ng-click="!checked || handleAnchorClick()">ANCHOR</a>
+    <button class="btn btn-primary" ng-disabled="checked" ng-click="handleButtonClick()">BUTTON</button>
+    <hr/>
+    <p>Anchor Clicks: {{anchorClicks}}</p> {{checked}}
+    <p>Button Clicks: {{buttonClicks}}</p>    
+</div>
+</body>
+</html>
