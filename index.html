@@ -10,19 +10,8 @@
  
 <script src="angular/angular.min.js" > </script>
 
-<script >
-    var myapp = angular.module("myapp",[]).controller("MyController",MyController);
-    function MyController($scope) {
-    $scope.anchorClicks = 0;
-    $scope.buttonClicks = 0;
-    $scope.handleAnchorClick = function() {
-        $scope.anchorClicks++;
-    };
-    $scope.handleButtonClick = function() {
-        $scope.buttonClicks++;
-    };
-    
-}
+<script src="app.js" >
+   
 </script>
 
 
@@ -39,7 +28,14 @@
     <button class="btn btn-primary" ng-disabled="checked" ng-click="handleButtonClick()">BUTTON</button>
     <hr/>
     <p>Anchor Clicks: {{anchorClicks}}</p> {{checked}}
-    <p>Button Clicks: {{buttonClicks}}</p>    
+    <p>Button Clicks: {{buttonClicks}}</p>  
+    <div class="row">
+        <div class="col-md-12 col-sm-12" ng-repeat="outer in myCustomJson">
+            <div ng-repeat="inner in outer">
+            <span class="primary">{{inner.type}}</span>
+        </div> 
+        </div>
+    </div>  
 </div>
 </body>
 </html>
