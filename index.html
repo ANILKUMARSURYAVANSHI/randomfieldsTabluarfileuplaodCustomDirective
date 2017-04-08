@@ -7,12 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=9;IE=10;IE=11;IE=Edge,chrome=1" />
     <title ng-bind="curPageTitle"></title>
 
- 
+ <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 <script src="angular/angular.min.js" > </script>
 
-<script src="app.js" >
-   
+<script src="app.js" > 
 </script>
+<script type="text/javascript" src="directives/directive.js"></script>
+<script type="text/javascript" src="directives/customeFields/customFieldController.js"></script>
+
+
+
 
 
 </head>
@@ -30,11 +34,21 @@
     <p>Anchor Clicks: {{anchorClicks}}</p> {{checked}}
     <p>Button Clicks: {{buttonClicks}}</p>  
     <div class="row">
-        <div class="col-md-12 col-sm-12" ng-repeat="outer in myCustomJson">
-            <div ng-repeat="inner in outer">
-            <span class="primary">{{inner.type}}<span ng-if="inner.type=='text'"><input type="text" name=""></span><span ng-if="inner.type=='dropdown'"> <select><option>Select</option></option></select> </span></span>
-        </div> 
-        </div>
+    {{myCustomJson}}
+    <table class="table">
+    <thead>
+    <tr><th ng-repeat="colName in myCustomJson[0]" >{{colName.label}}</th>
+    </tr>
+        
+    </thead>
+    <tbody>
+        <tr ng-repeat="outer in myCustomJson">
+            <td ng-repeat="inner in outer"><!-- {{inner.type}} --> <custom-field alter-field="actionOnField" type="inner.type" options="inner.options" canEdit="'true'" field="inner"    value="inner.value"> </custom-field> </td>
+        </tr>
+    </tbody>
+        
+    </table>
+
     </div>  
 </div>
 </body>

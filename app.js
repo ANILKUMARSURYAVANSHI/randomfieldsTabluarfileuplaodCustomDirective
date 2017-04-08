@@ -9,37 +9,55 @@
         $scope.buttonClicks++;
     };
 
+    $scope.actionOnField = function(){
+    	alert('In dir');
+    }
+
     $scope.myCustomJson = [
-    [{ label :"name",
-    	type:"text",
+    [{ label :"Product Name",
+    	type:"TEXT",
     	value:"",
     	options:[]
 
-    },{ label :"class",
-    	type:"text",
+    },{ label :"Description",
+    	type:"TEXT",
     	value:"",
     	options:[]
 
-    },{ label :"Rank",
-    	type:"dropdown",
+    },{ label :"Color",
+    	type:"DROPDOWN",
     	value:"",
-    	options:[]
+    	options:[{label:"Red",value:"red"},
+    	{label:"Green",value:"green"}]
+
+    },{ label :"Views",
+    	type:"FILE",
+    	value:"",
+    	options:[],
+    	
 
     }],
-    [{ label :"name",
-    	type:"text",
+    [{ label :"Product Name",
+    	type:"TEXT",
     	value:"",
     	options:[]
 
-    },{ label :"class",
-    	type:"text",
+    },{ label :"Description",
+    	type:"TEXT",
     	value:"",
     	options:[]
 
-    },{ label :"Rank",
-    	type:"dropdown",
+    },{ label :"Color",
+    	type:"DROPDOWN",
     	value:"",
-    	options:[]
+    	options:[{label:"Black",value:"Black"},
+    	{label:"White",value:"white"}]
+
+    },{ label :"Views",
+    	type:"FILE",
+    	value:"",
+    	options:[],
+
 
     }],
 

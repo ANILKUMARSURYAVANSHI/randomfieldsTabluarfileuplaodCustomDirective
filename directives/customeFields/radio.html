@@ -1,0 +1,7 @@
+<div >
+  <label class="optiontxt" ng-repeat="option in options" >
+    <input type="radio"  ng-model="field.value" ng-disabled="isReadOnly" value="Y"
+            ng-click="changeField(option)"/>
+    <label class="radioAnswerLabel">{{option.label}}</label>
+  </label>
+</div>

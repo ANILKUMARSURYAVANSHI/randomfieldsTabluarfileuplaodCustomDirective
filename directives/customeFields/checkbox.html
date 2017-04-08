@@ -1,0 +1,7 @@
+<div>
+    <label   ng-repeat="option in options" ng-click="changeField(option)">
+        <input type="checkbox" ng-model="option.value" ng-disabled="isReadOnly"
+          value=="Y" ng-change="changeField(option)"/>
+        <label>{{option.label}}</label>
+    </label>
+</div>
